@@ -1,0 +1,32 @@
+{
+    "name": "jamieynonan/default-property-normalizer",
+    "description": "Normalizer default value and Denormalizer by setter for Symfony Serializer",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jamie Ynonan",
+            "email": "jamiea31@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^7.1",
+        "symfony/serializer": "^4.0",
+        "jamieynonan/type-hint-reader": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Dpn\\": "src/Dpn/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Dpn\\": "tests/Dpn/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.1",
+        "infection/infection": "^0.8"
+    }
+}
