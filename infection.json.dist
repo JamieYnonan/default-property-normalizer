@@ -5,11 +5,14 @@
         ]
     },
     "timeout": 10,
+    "tmpDir": "build",
     "logs": {
-        "text": "build/infection/infection-log.txt"
+        "text": "build/infection/infection-log.txt",
+        "summary": "build/infection/summary-log.txt",
+        "debug": "build/infection/debug-log.txt"
     },
     "phpUnit": {
-        "configDir": "./",
-        "customPath": "\/vendor\/bin\/phpunit"
+        "configDir": ".",
+        "customPath": "\/app\/vendor\/bin\/phpunit"
     }
 }
