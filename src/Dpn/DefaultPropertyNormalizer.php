@@ -54,20 +54,24 @@ final class DefaultPropertyNormalizer extends PropertyNormalizer
     /**
      * {@inheritdoc}
      */
-    protected function getAttributeValue($object, $attribute, $format = null, array $context = [])
-    {
-        $value = $this->parentGetAttributeValue($object, $attribute, $format, $context);
+    protected function getAttributeValue(
+        $object,
+        $attribute,
+        $format = null,
+        array $context = []
+    ) {
+        $value = parent::getAttributeValue(
+            $object,
+            $attribute,
+            $format,
+            $context
+        );
 
         if ($value === null && isset($context['default'])) {
             return $this->getDefaultValue($object, $attribute);
         }
 
         return $value;
-    }
-
-    private function parentGetAttributeValue($object, $attribute, $format = null, array $context = [])
-    {
-        return parent::getAttributeValue($object, $attribute, $format, $context);
     }
 
     /**
@@ -88,16 +92,16 @@ final class DefaultPropertyNormalizer extends PropertyNormalizer
     /**
      * {@inheritdoc}
      */
-    protected function setAttributeValue($object, $attribute, $value, $format = null, array $context = [])
-    {
+    protected function setAttributeValue(
+        $object,
+        $attribute,
+        $value,
+        $format = null,
+        array $context = []
+    ) {
         if (!$this->setAttributeValueBySetter($object, $attribute, $value)) {
-            $this->parentSetAttributeValue($object, $attribute, $value, $format, $context);
+            parent::setAttributeValue($object, $attribute, $value, $format, $context);
         }
-    }
-
-    private function parentSetAttributeValue($object, $attribute, $value, $format = null, array $context = [])
-    {
-        return parent::setAttributeValue($object, $attribute, $value, $format, $context);
     }
 
     /**
